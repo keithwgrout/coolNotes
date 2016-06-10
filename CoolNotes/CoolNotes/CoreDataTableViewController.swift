@@ -16,6 +16,7 @@ class CoreDataTableViewController: UITableViewController {
         didSet{
         // Whenever the frc changes, we execute the search and
         // reload the table
+        fetchedResultsController?.delegate = self
         executeSearch()
         tableView.reloadData()
         }
@@ -32,7 +33,6 @@ class CoreDataTableViewController: UITableViewController {
     // protocol called NSArchiving. It's not relevant.
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
     }
     
     
